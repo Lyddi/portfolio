@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Vollkorn_SC } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const vollkornSC = Vollkorn_SC({
+  weight: ['400', '700', '900'], // Spécifiez les poids souhaités
+  subsets: ['latin'],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+   
+     <body className={vollkornSC.className}>{children}</body>
+      
+    
     </html>
   );
 }

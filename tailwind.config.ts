@@ -9,10 +9,34 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        'card-pattern': "url('/cardBG.jpg')",
+        'contact': "url('/contact.png')",
       },
+      brightness: {
+      60: '.6',
+       
+      },
+      colors: {
+        'light-gray':' #EDEDED',
+      },
+      fontSize: {
+        '7.5xl' : ['64px', {
+          lineHeight: '100%',
+          letterSpacing: '0.00em',
+          fontWeight: '400',
+        }],
+        '18xl': ['250px', {
+          lineHeight: '70%',
+          letterSpacing: '0.00em',
+          fontWeight: '400',
+        }],
+       
+      },
+      dropShadow: {
+        'text-shadow': '0 4px 15px   rgba(255, 255, 255, 0.83)',
+        'imgAbout' : '0 4px 20px   rgba(237, 237, 237, 0.2)',
+        'flipCard' : '0 4px 10px   rgba(245, 245, 245, 0.31)',
+      }
     },
   },
   plugins: [],

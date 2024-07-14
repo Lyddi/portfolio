@@ -2,29 +2,138 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+
+body {
+
+  background:rgb(24,23,29);
+}
+.perspective-1000 {
+  perspective: 1000px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.scroll-container {
+  display: flex;
+  overflow-x: scroll;
+  padding: 20px;
+  cursor: grab;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.card-container {
+  flex: 0 0 auto;
+  margin-right: 20px;
+}
+
+.dragging {
+  cursor: grabbing;
+}
+.text-move-up {
+  top: 0%;
+}
+@media (max-width: 640px) {
+  .text-move-up {
+    top: 50%; /* Ajustez la valeur selon vos besoins */
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.split-left, .split-right {
+  transition: transform 1s ease-in-out;
 }
+
+.split-left {
+  transform: translateX(0);
+}
+
+.split-right {
+  transform: translateX(0);
+}
+
+.split-left-active {
+  transform: translateX(-100%);
+}
+
+.split-right-active {
+  transform: translateX(100%);
+}
+@keyframes slide-up-and-in {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes slide-down-and-in {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up-and-in {
+  animation: slide-up-and-in 0.5s ease-out forwards;
+}
+
+.animate-slide-up {
+ 
+  animation: slide-up 0.5s ease-out forwards;
+}
+
+.animate-slide-down {
+  animation: slide-down 0.5s ease-in forwards;
+}
+
+.animate-slide-down-and-out {
+  animation: slide-down-and-out 0.5s ease-in forwards;
+}
+
+.img-container img {
+  width: 100%;
+  height: auto;
+}
+
+.new-text {
+  top: 100px;
+}
+
+
 
 @layer utilities {
   .text-balance {
